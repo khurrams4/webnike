@@ -1,6 +1,11 @@
-import Image from "next/image";
 
-const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
+import Image from "next/image";
+interface ShoeCardProps{
+  imgURL:{bigShoe:any , thumbnail?:string },
+  changeBigShoeImage:(value:any)=>void,
+  bigShoeImg:any,
+}
+const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }:ShoeCardProps) => {
   const handleClick = () => {
     if (bigShoeImg !== imgURL.bigShoe) {
       changeBigShoeImage(imgURL.bigShoe);
@@ -18,7 +23,7 @@ const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
     >
       <div className='flex justify-center items-center bg-card bg-center bg-cover sm:w-40 sm:h-40 rounded-xl max-sm:p-4'>
         <Image
-          src={imgURL.thumbnail}
+          src={imgURL.bigShoe}
           alt='shoe colletion'
           width={127}
           height={103.34}
