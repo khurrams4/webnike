@@ -3,7 +3,7 @@ import Image from "next/image";
 interface ReviewCardProps {
   imgURL:string,
   customerName:string,
-  rating:string,
+  rating:number,
   feedback:string,
 }
 const ReviewCard = ({ imgURL, customerName, rating, feedback }:ReviewCardProps) => {
